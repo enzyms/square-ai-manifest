@@ -56,7 +56,8 @@ export const manifest: ManifestPrinciple[] = [
 		number: 7,
 		headline: { bold: 'Security, ', rest: 'sovereignty' },
 		points: [
-			'Give access to the necessary data and systems only.',
+			'Give access to the necessary systems only.',
+			'Share data responsibly.'
 		]
 	},
 	{
