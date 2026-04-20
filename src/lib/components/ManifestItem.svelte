@@ -1,14 +1,12 @@
 <script lang="ts">
 	import type { ManifestPrinciple } from '$lib/data/manifest';
 
-	let { principle }: { principle: ManifestPrinciple } = $props();
-
-	const num = String(principle.number).padStart(2, '0');
+	let { principle, number }: { principle: ManifestPrinciple; number: number } = $props();
 </script>
 
 <article class="principle">
 	<div class="number-col">
-		<span class="number">{num}</span>
+		<span class="number">{String(number).padStart(2, '0')}</span>
 		<span class="accent-bar"></span>
 	</div>
 

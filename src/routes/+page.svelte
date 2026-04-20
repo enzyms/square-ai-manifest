@@ -1,7 +1,10 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import ManifestItem from '$lib/components/ManifestItem.svelte';
-	import { manifest } from '$lib/data/manifest';
+	import ReorderModal from '$lib/components/ReorderModal.svelte';
+	import { sortedManifest } from '$lib/stores/order';
+
+	let reorderOpen = $state(false);
 </script>
 
 <svelte:head>
@@ -24,18 +27,24 @@
 
 	<section class="manifest">
 		<div class="manifest-inner">
-			{#each manifest as principle (principle.number)}
-				<ManifestItem {principle} />
+			{#each $sortedManifest as principle, idx (principle.id)}
+				<ManifestItem {principle} number={idx + 1} />
 			{/each}
+			<div class="manifest-footnote">
+				<p class="footnote-text">Depending on our role, our project and our context, we may want to prioritize some principles over others.</p>
+				<button class="footnote-button" onclick={() => reorderOpen = true}>Start to reorder.</button>
+			</div>
 		</div>
 	</section>
 </main>
 
 <footer>
 	<div class="footer-content">
-		<p class="footer-text">Liip — Square Team — AI Manifest v1.0 — {new Date().getFullYear()}</p>
+		<p class="footer-text">Liip — Square Team — AI Manifest v1.1 — {new Date().getFullYear()}</p>
 	</div>
 </footer>
+
+<ReorderModal open={reorderOpen} onClose={() => reorderOpen = false} />
 
 <style>
 	footer {
@@ -114,5 +123,32 @@
 		max-width: var(--max-width);
 		margin: 0 auto;
 		border-top: 1px solid var(--text-color);
+	}
+
+	.manifest-footnote {
+		padding: var(--space-lg) 0 ;
+		padding-left: calc(5rem + var(--space-md));
+		font-size: var(--size-body);
+		line-height: 1.75;
+	}
+
+	.footnote-button {
+		display: inline-block;
+		font-size: var(--size-body);
+		font-weight: var(--weight-regular);
+		color: var(--text-color);
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+		cursor: pointer;
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-decoration-color: var(--highlight-color) !important;
+		text-underline-offset: .25em;
+
+		&:hover {
+			text-decoration-thickness: 2px;
+		}
 	}
 </style>

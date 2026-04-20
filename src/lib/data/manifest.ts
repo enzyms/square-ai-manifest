@@ -1,12 +1,12 @@
 export interface ManifestPrinciple {
-	number: number;
+	id: string;
 	headline: { bold: string; rest: string };
 	points: string[];
 }
 
 export const manifest: ManifestPrinciple[] = [
 	{
-		number: 1,
+		id: 'mental-health',
 		headline: { bold: 'Mental health', rest: 'first' },
 		points: [
 			'Control the acceleration, do not endure it.',
@@ -14,38 +14,39 @@ export const manifest: ManifestPrinciple[] = [
 		]
 	},
 	{
-		number: 2,
+		id: 'tool',
 		headline: { bold: 'AI is only', rest: 'a tool' },
 		points: [
 			"Don't lose ourselves.",
-			'Be aware of fascination and hype.',
+			'Be aware of fascination and hype.'
 		]
 	},
 	{
-		number: 3,
+		id: 'collective',
 		headline: { bold: 'Play', rest: 'collective' },
 		points: [
-			'Talk together, design together, code together.', 
-			'Help your colleague who feels left behind.', 
+			'Talk together, design together, code together.',
+			'Help your colleague who feels left behind.'
 		]
 	},
 	{
-		number: 4,
+		id: 'open',
 		headline: { bold: 'Keep it', rest: 'open' },
 		points: [
-			'“Open over Claude” ethics',
-			'Project setup must work for everyone.']
+			'"Open over Claude" ethics',
+			'Project setup must work for everyone.'
+		]
 	},
 	{
-		number: 5,
+		id: 'lazy',
 		headline: { bold: "Don't", rest: 'get lazy' },
 		points: [
 			'Keep your expertise sharp.',
-			'Keep your critical point of view.',
+			'Keep your critical point of view.'
 		]
 	},
 	{
-		number: 6,
+		id: 'human-loop',
 		headline: { bold: 'Human', rest: 'in the loop' },
 		points: [
 			'Avoid reviews from hell.',
@@ -53,15 +54,15 @@ export const manifest: ManifestPrinciple[] = [
 		]
 	},
 	{
-		number: 7,
+		id: 'sovereignty',
 		headline: { bold: 'Sovereignty', rest: 'at the centre' },
 		points: [
 			'Own your data.',
-			'Expose them responsibly.',
+			'Expose them responsibly.'
 		]
 	},
 	{
-		number: 8,
+		id: 'security',
 		headline: { bold: 'Security', rest: 'all around' },
 		points: [
 			'Give access to the necessary systems only.',
@@ -69,7 +70,7 @@ export const manifest: ManifestPrinciple[] = [
 		]
 	},
 	{
-		number: 9,
+		id: 'frugal',
 		headline: { bold: 'Be', rest: 'frugal' },
 		points: [
 			'Master your context, choose your LLM wisely.',
