@@ -8,8 +8,8 @@
 </script>
 
 <svelte:head>
-	<title>AI Manifest — Liip</title>
-	<meta name="description" content="10 principles for responsible AI usage at Liip." />
+	<title>AI Manifesto — Liip</title>
+	<meta name="description" content="Nine principles for responsible AI usage in the Square Team at Liip." />
 </svelte:head>
 
 <Header />
@@ -18,19 +18,19 @@
 	<section class="hero">
 		<div class="hero-inner">
 			<h1>
-				<span class="hero-bold">AI</span> Manifest
+				<span class="hero-bold">AI</span> Manifesto
 			</h1>
 			<span class="hero-accent"></span>
 			<p class="hero-lead">These are our shared principles for integrating AI in the Square Team. It's about intention, responsibility and a healthy dose of critical thinking.</p>
 		</div>
 	</section>
 
-	<section class="manifest">
-		<div class="manifest-inner">
+	<section class="manifesto">
+		<div class="manifesto-inner">
 			{#each $sortedManifest as principle, idx (principle.id)}
 				<ManifestItem {principle} number={idx + 1} />
 			{/each}
-			<div class="manifest-footnote">
+			<div class="manifesto-footnote">
 				<p class="footnote-text">Depending on our role, our project and our context, we may want to prioritize some principles over others.</p>
 				<button class="footnote-button" onclick={() => reorderOpen = true}>Start to reorder.</button>
 			</div>
@@ -40,7 +40,7 @@
 
 <footer>
 	<div class="footer-content">
-		<p class="footer-text">Liip — Square Team — AI Manifest v1.2 — {new Date().getFullYear()}</p>
+		<p class="footer-text">Liip — Square Team — AI Manifesto v1.2 — {new Date().getFullYear()}</p>
 	</div>
 </footer>
 
@@ -114,18 +114,18 @@
 		}
 	}
 
-	/* ---- Manifest list ---- */
-	.manifest {
+	/* ---- Manifesto list ---- */
+	.manifesto {
 		padding: 0 var(--space-md) var(--space-lg);
 	}
 
-	.manifest-inner {
+	.manifesto-inner {
 		max-width: var(--max-width);
 		margin: 0 auto;
 		border-top: 1px solid var(--text-color);
 	}
 
-	.manifest-footnote {
+	.manifesto-footnote {
 		padding: var(--space-lg) 0 ;
 		padding-left: calc(5rem + var(--space-md));
 		font-size: var(--size-body);
@@ -133,7 +133,7 @@
 	}
 
 	@media (max-width: 640px) {
-		.manifest-footnote {
+		.manifesto-footnote {
 			padding-left: calc(3rem + var(--space-sm));
 		}
 	}
